@@ -1,0 +1,110 @@
+.navbarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 30px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.navigations {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.link {
+    text-decoration: none;
+    font-size: 15px;
+    color: #444;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.link:hover {
+    color: #007bff;
+}
+
+.activeLink {
+    color: #007bff;
+    font-weight: 600;
+    position: relative;
+}
+
+.activeLink::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007bff;
+    border-radius: 2px;
+}
+
+.logoutBtn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #444;
+    transition: all 0.3s ease;
+}
+
+.logoutBtn:hover {
+    color: #dc3545;
+    transform: scale(1.1);
+}
+
+.navigations svg {
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.navigations svg:hover {
+    color: #007bff;
+}
+
+@media (max-width: 768px) {
+    .navbarContainer {
+        padding: 10px 20px;
+    }
+
+    .navigations {
+        gap: 15px;
+    }
+
+    .link,
+    .activeLink {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbarContainer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .navigations {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .logo img {
+        height: 35px;
+    }
+}
