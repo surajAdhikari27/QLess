@@ -1,0 +1,190 @@
+.tokenPage {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f7fb;
+    padding: 20px;
+}
+
+.card {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.card h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #6b7280;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.inputField {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.inputField p {
+    font-size: 14px;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+.inputField input {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    outline: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.inputField input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.card button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(90deg, #4f8cff, #5ac8fa);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card button:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
+.tokenCard {
+    width: 100%;
+    max-width: 520px;
+    background: #ffffff;
+    border-radius: 25px;
+    padding: 30px 25px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.tokenCard::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 6px;
+    width: 100%;
+    background: linear-gradient(90deg, #2563eb, #22c55e);
+}
+
+.tokenCard h4 {
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #94a3b8;
+    margin-bottom: 15px;
+}
+
+.tokenDetails {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.tokenDetails h1 {
+    font-size: 64px;
+    font-weight: 800;
+    color: #1e293b;
+}
+
+.tokenDetails h3 {
+    font-size: 20px;
+    color: #334155;
+}
+
+.waitingDetails {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    background: #f1f5f9;
+    padding: 18px;
+    border-radius: 16px;
+}
+
+.waitTime {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.waitTime svg {
+    color: #2563eb;
+    font-size: 18px;
+}
+
+.waitTime p {
+    font-size: 13px;
+    color: #64748b;
+}
+
+.waitTime h3 {
+    font-size: 20px;
+    color: #0f172a;
+}
+
+.currentlyServing {
+    text-align: right;
+}
+
+.currentlyServing p {
+    font-size: 13px;
+    color: #64748b;
+}
+
+.currentlyServing h3 {
+    font-size: 20px;
+    color: #2563eb;
+}
+
+@media (max-width: 768px) {
+    .card,
+    .tokenCard {
+        padding: 30px 20px;
+    }
+    .tokenDetails h1 {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card h2 {
+        font-size: 24px;
+    }
+    .tokenDetails h1 {
+        font-size: 42px;
+    }
+    .waitingDetails {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .currentlyServing {
+        text-align: left;
+    }
+}
