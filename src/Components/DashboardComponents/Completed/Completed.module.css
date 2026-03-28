@@ -1,0 +1,50 @@
+.completedContainer {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header svg {
+    color: #94a3b8;
+    font-size: 16px;
+}
+
+.header h4 {
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: #94a3b8;
+}
+
+.completedContainer p {
+    font-size: 14px;
+    color: #64748b;
+}
+
+@media (max-width: 768px) {
+    .completedContainer {
+        padding: 15px;
+    }
+    .header h4 {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .completedContainer {
+        padding: 12px;
+    }
+    .header {
+        gap: 6px;
+    }
+    .header h4 {
+        font-size: 12px;
+    }
+}

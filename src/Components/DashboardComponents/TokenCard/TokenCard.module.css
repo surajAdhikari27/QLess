@@ -1,0 +1,105 @@
+.card {
+    position: relative;
+    border-radius: 18px;
+    padding: 16px;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+}
+
+.current {
+    background: #16a34a;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.current h3 {
+    font-size: 64px;
+    font-weight: 800;
+}
+
+.current p {
+    font-size: 20px;
+    margin-top: 10px;
+    opacity: 0.95;
+}
+
+.next {
+    background: #fef9c3;
+    border: 2px solid #facc15;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.next h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #92400e;
+}
+
+.next p {
+    font-size: 14px;
+    color: #475569;
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #facc15;
+    color: #78350f;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.completed {
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.completed h3 {
+    font-size: 18px;
+    color: #94a3b8;
+}
+
+.completed p {
+    font-size: 14px;
+    color: #64748b;
+}
+
+@media (max-width: 768px) {
+    .current h3 {
+        font-size: 48px;
+    }
+    .current p {
+        font-size: 18px;
+    }
+    .next h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 14px;
+    }
+    .current {
+        padding: 30px 15px;
+    }
+    .current h3 {
+        font-size: 40px;
+    }
+    .current p {
+        font-size: 16px;
+    }
+    .badge {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+}
