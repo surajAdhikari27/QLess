@@ -1,0 +1,41 @@
+.QueueHeader {
+    padding: 60px 20px 20px 20px;
+    background-color: #f5f7fb;
+    text-align: left;
+}
+
+.QueueHeader h1 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.QueueHeader p {
+    font-size: 16px;
+    color: #64748b;
+}
+
+@media (max-width: 768px) {
+    .QueueHeader {
+        padding: 50px 20px 15px 20px;
+    }
+    .QueueHeader h1 {
+        font-size: 30px;
+    }
+    .QueueHeader p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .QueueHeader {
+        padding: 40px 15px 10px 15px;
+    }
+    .QueueHeader h1 {
+        font-size: 24px;
+    }
+    .QueueHeader p {
+        font-size: 14px;
+    }
+}
