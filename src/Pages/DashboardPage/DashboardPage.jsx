@@ -6,6 +6,7 @@ import QueueHeader from '../../Components/DashboardComponents/QueueHeader/QueueH
 import StatsCard from '../../Components/DashboardComponents/StatsCard/StatsCard'
 import UpNext from "../../Components/DashboardComponents/UpNext/UpNext"
 import AppwriteTokensService from '../../AppwriteServices/AppwriteTokens'
+import styles from './DashboardPage.module.css';
 
 
 function DashboardPage(){
@@ -29,22 +30,22 @@ function DashboardPage(){
 
     return(
         <>
-        <div className="dashboard">
+        <div className={styles.dashboard}>
             <QueueHeader />
-
-            <div className="statsCard">
+            <div className={styles.statsCard}>
                 <StatsCard
-                title="TOTAL WAIT TIME"
-                value={`~${totalWaitTime} min`} 
+                    title="TOTAL WAIT TIME"
+                    value={`~${totalWaitTime} min`}
                 />
-
                 <StatsCard
-                title="TOKENS WAITING"
-                value={tokensWaiting}
+                    title="TOKENS WAITING"
+                    value={tokensWaiting}
                 />
             </div>
-            <ProgressBar progress={50}/>
-            <div className="queueStatus">
+            <div className={styles.progress}>
+                <ProgressBar progress={50} />
+            </div>
+            <div className={styles.queueStatus}>
                 <NowServing token={currentToken}/>
                 <UpNext token={waitingTokens}/>
                 <Completed token={completedTokens}/>
