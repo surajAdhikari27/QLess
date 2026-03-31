@@ -1,0 +1,56 @@
+.AdminPage {
+    padding: 30px 40px;
+    background-color: #f5f7fb;
+    min-height: 100vh;
+}
+
+.activityContainer {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    align-items: flex-start;
+}
+
+.currentStatus {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.activityCards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.activityCards > * {
+    flex: 1;
+    min-width: 220px;
+}
+
+.activityContainer > :last-child {
+    flex: 1;
+    min-width: 280px;
+}
+
+@media (max-width: 1024px) {
+    .AdminPage {
+        padding: 25px 20px;
+    }
+    .activityContainer {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .activityContainer {
+        flex-direction: column;
+    }
+    .activityCards {
+        flex-direction: column;
+    }
+    .activityCards > * {
+        width: 100%;
+    }
+}
