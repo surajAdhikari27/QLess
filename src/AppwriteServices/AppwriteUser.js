@@ -14,7 +14,7 @@ export class AppwriteUser{
     }
 
     //creating the user document(row)
-    async createUserDocument(user){
+    async createUserDocument({ userID, email, role = "user" }){
         try{
             return await this.databases.createDocument(
                 config.appwriteDatabaseID,
@@ -23,7 +23,7 @@ export class AppwriteUser{
                 {
                     userID: user.$id,
                     email: email,
-                    role: "admin"
+                    role: role
                 }
             );
         }
@@ -36,14 +36,13 @@ export class AppwriteUser{
     //getting user by id
     async getUserByID(userID){
         try{
-            const response= await this.databases.listDocuments(
+            return await this.databases.listDocuments(
                 config.appwriteDatabaseID,
                 config.appwriteUsersCollectionID,
                 [
                     Query.equal("userID", userID)
                 ]
             );
-            return response.documents[0] || null;
         }
         catch(error){
             console.log("Appwrite :: getUserByID :: error :: ",error);
@@ -54,7 +53,10 @@ export class AppwriteUser{
     //getting the role by user ID
     async getUserRole(userID) {
         const user = await this.getUserByID(userID);
-        return user?.role || null;
+        if(user.documents.length > 0){
+            return user.documents[0].role;
+        }
+        return null;
     }
 
     //updating the user role
