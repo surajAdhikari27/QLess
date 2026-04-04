@@ -40,7 +40,7 @@ export class AppwriteTokens{
         try{
             return await this.databases.listDocuments(
                 config.appwriteDatabaseID,
-                appwriteTokensCollectionID,
+                config.appwriteTokensCollectionID,
                 [
                     Query.orderAsc("tokenNumber")
                 ]
@@ -57,7 +57,7 @@ export class AppwriteTokens{
         try{
             return await this.databases.updateDocument(
                 config.appwriteDatabaseID,
-                appwriteTokensCollectionID,
+                config.appwriteTokensCollectionID,
                 docID,
                 {
                     status: newStatus,

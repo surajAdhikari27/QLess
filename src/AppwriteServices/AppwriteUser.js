@@ -21,7 +21,7 @@ export class AppwriteUser{
                 config.appwriteUsersCollectionID,
                 ID.unique(),
                 {
-                    userID: user.$id,
+                    userID: userID,
                     email: email,
                     role: role
                 }
