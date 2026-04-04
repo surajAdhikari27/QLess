@@ -89,3 +89,5 @@ function TokenPage(){
         </>
     )
 }
+
+export default TokenPage;
