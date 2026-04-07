@@ -4,7 +4,7 @@ import styles from './Navbar.module.css'
 import {useSelector, useDispatch} from 'react-redux';
 import {logout} from "../../../store/AuthSlice";
 import AppwriteAuthService from '../../../AppwriteServices/AppwriteAuth'
-import QlessLogo from "../../assets/QlessLogo.png"
+import QlessLogo from "../../../assets/QlessLogo.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPowerOff,faArrowRightToBracket} from '@fortawesome/free-solid-svg-icons'
 
@@ -13,6 +13,7 @@ function Navbar(){
     const {userData}= useSelector((state)=>state.auth);
     const dispatch= useDispatch();
     const navigate= useNavigate();
+
 
     const handleLogout=async()=>{
         if(window.confirm("Do you really want to logout?")){
@@ -43,9 +44,11 @@ function Navbar(){
                         Dashboard
                     </NavLink>
 
-                    <NavLink to="/admin" className={({isActive}) => isActive ? styles.activeLink : styles.link}>
-                        Admin
-                    </NavLink>
+                    {userData && (
+                        <NavLink to="/admin" className={({isActive}) => isActive ? styles.activeLink : styles.link}>
+                            Admin
+                        </NavLink>
+                    )}
 
                     {userData ? (
                         <button className={styles.logoutBtn} onClick={handleLogout}>

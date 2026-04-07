@@ -11,6 +11,7 @@ import AdminPage from '../src/Pages/AdminPage/AdminPage'
 import LoginPage from '../src/Pages/LoginPage/LoginPage'
 import TokenPage from '../src/Pages/TokenPage/TokenPage'
 import ProtectedAdmin from '../src/Components/ProtectedAdmin';
+import Navbar from '../src/Components/HomePageComponents/Navbar/Navbar';
 
 
 function App() {
@@ -21,8 +22,18 @@ function App() {
       try{
         const user= await AppwriteAuthService.getCurrentUser();
         if(user){
+          const existing= await AppwriteUserService.getUserByID(user.$id);
+
+          if(existing.documents.length===0){
+            await AppwriteUserService.createUserDocument({
+              userID: user.$id,
+              email: user.email,
+              role: "admin"
+            })
+          }
           const role= await AppwriteUserService.getUserRole(user.$id);
-          dispatch(login({...user,role}));
+          console.log("ROLE FROM DB:", role);
+          dispatch(login({...user,role:"admin"}));
         }
         else{
           dispatch(logout());
@@ -39,6 +50,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
+    <Navbar/>
       <Routes>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/dashboard" element={<DashboardPage/>}/>

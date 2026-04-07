@@ -18,7 +18,7 @@ function AdminPage(){
         const metaRes= await AppwriteQueueMetaService.getQueueMeta();
 
         setTokens(tokenRes.documents);
-        setMeta(metaRes.documents);
+        setMeta(metaRes);
     };
 
     useEffect(()=>{
@@ -49,9 +49,10 @@ function AdminPage(){
                     "current"
                 )
 
-                await AppwriteQueueMetaService.updateCurrentToken(
-                    meta.$id,
-                    next.tokenNumber
+                await AppwriteQueueMetaService.updateCurrentToken({
+                    docID: meta.$id,
+                    newTokenNumber: next.tokenNumber
+                }
                 )
             }
             fetchData();
@@ -63,7 +64,7 @@ function AdminPage(){
 
     const handleReset=async()=>{
         try{
-            await AppwriteQueueMetaService.resetQueue(meta.$id);
+            await AppwriteQueueMetaService.resetQueue({docID:meta.$id});
 
             for(let token of tokens){
                 await AppwriteTokensService.updateTokenStatus(token.$id, "waiting");

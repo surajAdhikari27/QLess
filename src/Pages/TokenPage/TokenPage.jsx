@@ -25,7 +25,12 @@ function TokenPage(){
                 tokenNumber: newTokenNumber
             })
 
-            await AppwriteQueueMetaService.incrementTokenNumber(meta.$id,meta.lastToken)
+            await AppwriteQueueMetaService.incrementTokenNumber(
+                {
+                    docID: meta.$id,
+                    lastTokenNumber: meta.lastToken
+                }
+            )
 
             setToken({
                 ...createToken,

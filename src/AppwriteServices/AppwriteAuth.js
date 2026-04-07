@@ -75,4 +75,3 @@ export class AppwriteAuth{
 
 const AppwriteAuthService= new AppwriteAuth()
 export default AppwriteAuthService;
-

@@ -28,17 +28,18 @@ function Login(){
             <div className={styles.card}>
                 <h1>Welcome Back</h1>
                 <p>Login to access Admin Panel</p>
+                <button
+                    className={styles.button}
+                    onClick={handleGoogleLogin}
+                    disabled={loading}
+                >
+                    {loading ? "Redirecting..." : "Continue with Google"}
+                </button>
+                <p className={styles.back} onClick={() => navigate("/")}>
+                    <FontAwesomeIcon icon={faArrowLeft}/>
+                    Back to Home
+                </p>
             </div>
-            <button
-                onClick={handleGoogleLogin}
-                disabled={loading}
-            >
-                {loading ? "Redirecting..." : "Continue with Google"}
-            </button>
-            <p onClick={() => navigate("/")}>
-                <FontAwesomeIcon icon={faArrowLeft}/>
-                Back to Home
-            </p>
         </div>
         </>
     )
