@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './AdminStatsCard.module.css'
 
-function AdminStatsCard({icon, title, value}){
+function AdminStatsCard({icon, title, value, variant}){
     return(
         <>
         <div className={styles.adminStatsCard}>
-            <div className={styles.title}>
+            <div className={`${styles.title} ${variant === "served" ? styles.served : styles.waiting}`}>
                 {icon}
                 <p>{title}</p>
             </div>
@@ -14,5 +14,6 @@ function AdminStatsCard({icon, title, value}){
         </>
     )
 }
+
 
 export default AdminStatsCard;

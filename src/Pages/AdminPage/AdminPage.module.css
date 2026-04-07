@@ -1,45 +1,54 @@
 .AdminPage {
-    padding: 30px 40px;
+    padding: 18px 36px 36px;
     background-color: #f5f7fb;
     min-height: 100vh;
 }
 
 .activityContainer {
     display: flex;
-    gap: 30px;
-    margin-top: 30px;
+    gap: 26px;
+    margin-top: 18px;
     align-items: flex-start;
+    max-width: 1096px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .currentStatus {
-    flex: 2;
+    flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 26px;
 }
 
 .activityCards {
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 16px;
+    align-items: stretch;
 }
 
 .activityCards > * {
     flex: 1;
-    min-width: 220px;
+    min-width: 0;
 }
 
 .activityContainer > :last-child {
-    flex: 1;
-    min-width: 280px;
+    width: 364px;
+    min-width: 320px;
 }
 
 @media (max-width: 1024px) {
     .AdminPage {
-        padding: 25px 20px;
+        padding: 18px 20px 28px;
     }
     .activityContainer {
         gap: 20px;
+        max-width: none;
+    }
+    .activityContainer > :last-child {
+        width: 340px;
+        min-width: 300px;
     }
 }
 
@@ -50,7 +59,13 @@
     .activityCards {
         flex-direction: column;
     }
+
     .activityCards > * {
         width: 100%;
+    }
+
+    .activityContainer > :last-child {
+        width: 100%;
+        min-width: 0;
     }
 }

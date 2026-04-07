@@ -1,62 +1,70 @@
 .adminStatsCard {
     background: #ffffff;
-    border-radius: 18px;
-    padding: 22px 24px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e2e8f0;
+    border-radius: 22px;
+    padding: 28px 30px 24px;
+    box-shadow: 0 12px 26px rgba(15, 23, 42, 0.05);
+    border: 1px solid #dbe5f1;
     width: 100%;
-    max-width: 320px;
+    min-height: 156px;
     transition: all 0.3s ease;
 }
 
 .adminStatsCard:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 16px 30px rgba(15, 23, 42, 0.08);
 }
 
 .title {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 12px;
+    gap: 10px;
+    margin-bottom: 26px;
 }
 
 .title svg {
-    color: #2563eb;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .title p {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #64748b;
+    color: #5f789e;
+}
+
+.waiting svg {
+    color: #2563eb;
+}
+
+.served svg {
+    color: #00c950;
 }
 
 .adminStatsCard h2 {
-    font-size: 36px;
+    font-size: 44px;
     font-weight: 800;
     color: #0f172a;
+    line-height: 1;
 }
 
 @media (max-width: 768px) {
-    .adminStatsCard {
-        max-width: 100%;
-    }
     .adminStatsCard h2 {
-        font-size: 30px;
+        font-size: 38px;
     }
 }
 
 @media (max-width: 480px) {
     .adminStatsCard {
-        padding: 18px 16px;
-        border-radius: 14px;
+        padding: 22px 20px;
+        border-radius: 18px;
+        min-height: 132px;
     }
+
     .title p {
-        font-size: 12px;
+        font-size: 13px;
     }
+
     .adminStatsCard h2 {
-        font-size: 26px;
+        font-size: 34px;
     }
 }

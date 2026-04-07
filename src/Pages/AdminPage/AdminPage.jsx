@@ -97,11 +97,13 @@ function AdminPage(){
                             icon={<FontAwesomeIcon icon={faUsers}/>}
                             title="TOTAL WAITING"
                             value={waitingCount}
+                            variant="waiting"
                         />
                         <AdminStatsCard
                             icon={<FontAwesomeIcon icon={faCircleCheck}/>}
                             title="TOTAL SERVED"
                             value={servedCount}
+                            variant="served"
                         />
                     </div>
                 </div>
