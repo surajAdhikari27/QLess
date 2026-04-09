@@ -32,6 +32,9 @@ function AdminPage(){
     const waitingCount= waitingToken.length;
     const servedCount= completedToken.length;
 
+    const totalTokens = tokens.length;
+
+   
     const handleCallNext=async()=>{
         try{
             if(currentToken){
@@ -76,12 +79,25 @@ function AdminPage(){
         }
     }
 
+    const handleClearLogs = async () => {
+    try {
+        const confirmDelete = window.confirm("Delete all activity logs?");
+        if (!confirmDelete) return;
+        await AppwriteTokensService.deleteAllTokens();
+        await AppwriteQueueMetaService.resetQueue({ docID: meta.$id });
+        setTokens([]);
+    } catch (error) {
+        console.log("Clear Logs Error :: ", error);
+    }
+    };
+
     return(
         <>
         <div className={styles.AdminPage}>
             <AdminHeader
                 handleReset={handleReset}
                 handleCallNext={handleCallNext}
+                handleClearLogs={handleClearLogs}
             />
 
             <div className={styles.activityContainer}>

@@ -57,7 +57,7 @@
 .currentToken button {
     min-width: 332px;
     min-height: 76px;
-    background: linear-gradient(90deg, #86a5ff 0%, #65d7f0 100%);
+    background: #2563eb;
     color: #ffffff;
     border: none;
     padding: 20px 32px;

@@ -27,6 +27,12 @@ function DashboardPage(){
 
     const tokensWaiting= waitingTokens.length;
     const totalWaitTime= tokensWaiting*2;
+    const totalTokens = tokens.length;
+     const progress =
+        totalTokens === 0
+            ? 0
+            : Math.round((completedTokens.length / totalTokens) * 100);
+
 
     return(
         <>
@@ -43,7 +49,7 @@ function DashboardPage(){
                 />
             </div>
             <div className={styles.progress}>
-                <ProgressBar progress={50} />
+                <ProgressBar progress={progress} />
             </div>
             <div className={styles.queueStatus}>
                 <NowServing token={currentToken}/>

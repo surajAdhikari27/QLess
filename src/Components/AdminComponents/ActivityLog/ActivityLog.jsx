@@ -40,7 +40,7 @@ function ActivityLog({ tokens }) {
                 <h3>Activity Log</h3>
             </div>
 
-            {sorted.slice(0, 6).map((token) => (
+            {sorted.slice(0, 50).map((token) => (
                 <div className={styles.card} key={token.$id}>
 
                     <div className={styles.row}>

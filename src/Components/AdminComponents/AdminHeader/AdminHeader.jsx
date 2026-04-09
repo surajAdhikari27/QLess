@@ -1,9 +1,10 @@
 import React from 'react';
 import styles from './AdminHeader.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faArrowRotateRight, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faArrowRotateRight, faArrowRight, faTrash } from '@fortawesome/free-solid-svg-icons'
 
-function AdminHeader({handleReset, handleCallNext}){
+
+function AdminHeader({handleReset, handleCallNext, handleClearLogs}){
 
     return(
         <>
@@ -19,6 +20,11 @@ function AdminHeader({handleReset, handleCallNext}){
                 <button onClick={handleReset}>
                     <FontAwesomeIcon icon={faArrowRotateRight}/>
                     Reset
+                </button>
+
+                <button onClick={handleClearLogs} className={styles.clearBtn}>
+                    <FontAwesomeIcon icon={faTrash}/>
+                    Clear Logs
                 </button>
 
                 <button onClick={handleCallNext}>

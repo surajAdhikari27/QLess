@@ -72,6 +72,26 @@ export class AppwriteTokens{
             throw error;
         }
     }
+
+    //deleting token
+    async deleteAllTokens() {
+    try {
+        const response = await this.getAllTokens();
+
+        const deletePromises = response.documents.map((doc) =>
+            this.databases.deleteDocument(
+                config.appwriteDatabaseID,
+                config.appwriteTokensCollectionID,
+                doc.$id
+            )
+        );
+
+        await Promise.all(deletePromises);
+    } catch (error) {
+        console.log("Appwrite :: deleteAllTokens :: error :: ", error);
+        throw error;
+    }
+}
 }
 
 const AppwriteTokensService = new AppwriteTokens()

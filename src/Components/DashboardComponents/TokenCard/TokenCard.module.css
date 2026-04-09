@@ -22,7 +22,7 @@
 .current p {
     font-size: 20px;
     margin-top: 10px;
-    opacity: 0.95;
+    color: #d1fae5 !important;
 }
 
 .next {

@@ -10,6 +10,18 @@
     cursor: pointer;
 }
 
+.icon {
+    font-size: 28px;
+    color: #2563eb;
+    margin-bottom: 15px;
+    padding: 12px;
+    background-color: #e5e7eb;
+    border-radius: 14px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .featureCard:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);

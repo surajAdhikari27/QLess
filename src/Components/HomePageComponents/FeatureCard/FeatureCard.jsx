@@ -6,7 +6,9 @@ function FeatureCard({icon, title , description}){
     return(
         <>
             <div className={styles.featureCard}>
-                <img src={icon} alt="icon"/>
+                <div className={styles.icon}>
+                    {icon}
+                </div>
                 <h3>{title}</h3>
                 <p>{description}</p>
             </div>

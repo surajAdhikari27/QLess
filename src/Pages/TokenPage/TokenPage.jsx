@@ -70,7 +70,6 @@ function TokenPage(){
             ) : (
                 <div className={styles.tokenCard}>
                     <h4>YOUR TOKEN</h4>
-
                     <div className={styles.tokenDetails}>
                         <h1>#{token.tokenNumber}</h1>
                         <h3>{name}</h3>

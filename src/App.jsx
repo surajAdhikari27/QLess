@@ -32,7 +32,6 @@ function App() {
             })
           }
           const role= await AppwriteUserService.getUserRole(user.$id);
-          console.log("ROLE FROM DB:", role);
           dispatch(login({...user,role:"admin"}));
         }
         else{
