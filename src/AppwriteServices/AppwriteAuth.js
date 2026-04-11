@@ -40,10 +40,12 @@ export class AppwriteAuth{
     }
 
     //login with google
-    loginWithGoogle(provider, success, failure){
+    loginWithGoogle(){
         try{
+            const successURL = window.location.origin + "/admin";
+            const failureURL = window.location.origin + "/login";
             return this.account.createOAuth2Session("google",
-                "http://localhost:5173/admin", "http://localhost:5173/login")
+                successURL, failureURL)
         }
         catch(error){
             console.log("Appwrite :: loginWithGoogle :: error :: ",error);
